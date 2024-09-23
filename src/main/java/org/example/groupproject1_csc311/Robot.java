@@ -23,3 +23,4 @@ public class Robot {
         gc.drawImage(robotImage, x, y);
     }
 }
+
