@@ -75,7 +75,6 @@ public class HelloApplication extends Application {
             case SPACE -> toggleAutoMove();
         }
     }
-
     private void moveCar(int dx, int dy) {
         PixelReader pixelReader = getCurrentMaze().getPixelReader();
         double nextX = car.getX() + dx;

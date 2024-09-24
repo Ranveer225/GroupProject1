@@ -2,12 +2,10 @@ package org.example.groupproject1_csc311;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
 import java.util.Objects;
 
 public class Robot {
     private ImageView imageView;
-
     public Robot(double x, double y) {
         Image robotImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/robot.png")));
         imageView = new ImageView(robotImage);
@@ -29,3 +27,4 @@ public class Robot {
         imageView.setY(y);
     }
 }
+
