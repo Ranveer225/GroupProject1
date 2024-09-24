@@ -1,26 +1,31 @@
 package org.example.groupproject1_csc311;
 
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
+import java.util.Objects;
 
 public class Robot {
-    private double x;
-    private double y;
-    private Image robotImage;
+    private ImageView imageView;
 
     public Robot(double x, double y) {
-        this.x = x;
-        this.y = y;
-        this.robotImage = new Image("path/to/robot.png");
+        Image robotImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/robot.png")));
+        imageView = new ImageView(robotImage);
+        imageView.setX(x);
+        imageView.setY(y);
+    }
+    public ImageView getImageView() {
+        return imageView;
+    }
+    public double getX() {
+        return imageView.getX();
     }
 
-    public void move(double dx, double dy) {
-        x += dx;
-        y += dy;
+    public double getY() {
+        return imageView.getY();
     }
-
-    public void draw(GraphicsContext gc) {
-        gc.drawImage(robotImage, x, y);
+    public void setPosition(double x, double y) {
+        imageView.setX(x);
+        imageView.setY(y);
     }
 }
-
